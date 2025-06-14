@@ -13,31 +13,31 @@ const projects = [
   {
     title: "Tic Tac Toe Game",
     description: "Game Tic Tac Toe klasik dengan tampilan modern dan interaktif. Dibuat menggunakan HTML, CSS, dan JavaScript.",
-    link: "https://github.com/venzuuww/tic-tac-toe",
+    link: "https://venzuuww.github.io/tic-tac-toe/",
     image: "static/images/ttt.png"
   },
   {
     title: "Portfolio Website",
     description: "Website portfolio pribadi dengan desain modern dan responsif. Menggunakan HTML, CSS, dan JavaScript.",
-    link: "https://github.com/venzuuww/portfolio",
+    link: "https://venzuuww.github.io/Portofolio-simple/",
     image: "static/images/portfolio.png"
   },
   {
     title: "Todo List App",
     description: "Aplikasi todo list dengan fitur CRUD lengkap. Dibuat menggunakan React.js dan Tailwind CSS.",
-    link: "https://github.com/venzuuww/todo-list",
+    link: "https://venzuuww.github.io/to-do-list/",
     image: "static/images/tdl.png"
   },
   {
     title: "Kalkulator",
     description: "Aplikasi kalkulator web sederhana.",
-    link: "https://venzuuww.github.io/kalkulator-sederhana/",
+    link: "https://venzuuww.github.io/Kalkulator-sederhana/",
     image: "static/images/kalkulator.png"
   },
   {
     title: "Landing Page",
     description: "Landing page responsif untuk produk/layanan.",
-    link: "https://venzuuww.github.io/landing-page/",
+    link: "https://venzuuww.github.io/landing-page-bengkel/",
     image: "static/images/landing-page.png"
   },
   {
