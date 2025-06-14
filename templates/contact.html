@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Kontak - Venzuu{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-space-dark min-h-screen">
+    <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-12 text-space-text">Kontak</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-space-text">Nama</label>
+                        <input type="text" id="name" name="name" class="form-input">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-space-text">Email</label>
+                        <input type="email" id="email" name="email" class="form-input">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-space-text">Subjek</label>
+                        <input type="text" id="subject" name="subject" class="form-input">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-space-text">Pesan</label>
+                        <textarea id="message" name="message" rows="4" class="form-input"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Kirim Pesan</button>
+                </form>
+            </div>
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-space-text">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-space-accent"></i>
+                            <span class="text-space-text">ve.nzuuww@email.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-space-accent"></i>
+                            <span class="text-space-text">+62 812-3456-7890</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-github text-space-accent"></i>
+                            <a href="https://github.com/venzuuww" class="text-space-accent underline">github.com/venzuuww</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-space-text">Ikuti Saya</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/venzuuww" class="text-space-accent text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'space-black': '#0a0a0a',
+                        'space-dark': '#1a1a1a',
+                        'space-gray': '#2a2a2a',
+                        'space-light': '#3a3a3a',
+                        'space-accent': '#4a9eff',
+                        'space-text': '#e0e0e0'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-space-black text-space-text">
+    <!-- Stars Background -->
+    <div id="stars-container" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-space-dark/80 backdrop-blur-sm fixed w-full z-50 border-b border-space-light">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="{{ url_for('home') }}" class="text-xl font-bold text-space-accent">Portfolio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="{{ url_for('home') }}" class="text-space-text hover:text-space-accent transition duration-300">Beranda</a>
+                    <a href="{{ url_for('projects') }}" class="text-space-text hover:text-space-accent transition duration-300">Proyek</a>
+                    <a href="{{ url_for('contact') }}" class="text-space-text hover:text-space-accent transition duration-300">Kontak</a>
+                </div>
+                <button class="md:hidden text-space-text hover:text-space-accent">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="fixed top-20 right-4 z-50">
+                {% for message in messages %}
+                    <div class="bg-space-dark border border-space-accent text-space-text px-6 py-3 rounded-lg shadow-lg mb-4 animate-fade-in">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-space-dark border-t border-space-light py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-space-text">&copy; 2025 Venzuu. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-space-text hover:text-space-accent transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-space-text hover:text-space-accent transition duration-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-space-text hover:text-space-accent transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Create stars
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            const starCount = 100;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 2;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random animation delay
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                
+                container.appendChild(star);
+            }
+        }
+
+        // Initialize stars when page loads
+        document.addEventListener('DOMContentLoaded', createStars);
+    </script>
+</body>
+</html> 
