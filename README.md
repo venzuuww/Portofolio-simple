@@ -41,20 +41,6 @@ Cukup buka public/index.html di browser
 
 Semua data proyek langsung dari file JS
 
-🐍 Jalankan dengan Flask (Backend opsional)
-bash
-Copy
-Edit
-# 1. Aktifkan virtual environment (opsional)
-python -m venv venv
-source venv/bin/activate  # di Windows: venv\Scripts\activate
-
-# 2. Install dependensi
-pip install -r backend/requirements.txt
-
-# 3. Jalankan server Flask
-python backend/app.py
-Lalu buka browser ke http://localhost:5000
 
 📌 Customisasi
 Edit file script.js di folder public/ buat tambah proyek
